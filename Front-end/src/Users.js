@@ -87,9 +87,9 @@ class ShowUsers extends React.Component{
         return (
           <tr key={users._id} className='userlist'>
         <td>{users.UserName}</td>
-        {users.Room.length > 0? 
+        {users.Room?.length > 0? 
          <td>{users.Room[0].RoomNumber}</td>:  <td>Nej</td>}
-        <td> <button onClick={() => {if(window.confirm("Säkert på att du vill radera användare "+users.UserName +"?")) {users.Room.length > 0 ? this.handleClick(users._id,users.Room[0]._id): this.handleClick(users._id,0)};}}>Ta bort</button></td>
+        <td> <button onClick={() => {if(window.confirm("Säkert på att du vill radera användare "+users.UserName +"?")) {users.Room?.length > 0 ? this.handleClick(users._id,users.Room[0]._id): this.handleClick(users._id,0)};}}>Ta bort</button></td>
         </tr>
         )
       }
